@@ -1,6 +1,6 @@
-$background : #323232;
-$border : #a3a3a3;
-
+$background : #2e2e2e;
+$textcolor : rgb(202, 202, 202);
+$textcolordark : rgb(197, 197, 197);
 $youtube : #711521;
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
@@ -11,53 +11,77 @@ $youtube : #711521;
     box-sizing: border-box;
     text-decoration: none;
     background-color: $background;
-}
-
-;
+};
 
 html {
     scroll-behavior: smooth;
+    font-family: 'Roboto', sans-serif;
 };
 
 .links {
+    margin-top: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+
     h1 {
-        scale: 50px;
+        color: $textcolor;
     }
 
     .link {
-        display: flex;
-        align-items: stretch;
+        transition: 300ms;
+        margin-top: 10px;
+        display: grid;
+        grid-template-columns: 10% auto 10%;
+        grid-template-areas: "img txt nx";
+        width: 60vw;
         border-style: none;
         border-radius: 30px;
-        border-width: 2px;
-        border-color: $border;
-        padding: 10px;
         background-color: $youtube;
-        img {
-            background-color: $youtube;
-            height: 40px;
-            margin-left: 5px;
-            margin-right: 10px;
+            img {
+                z-index: 1;
+                grid-area: img;
+                align-items: center;
+                align-content: center;
+                text-align: center;
+                background-color: $youtube;
+                height: 28px;
+                margin: auto 10px;
+            }
+            h1 {
+                font-size: 200%;
+                grid-area: txt;
+                align-items: center;
+                text-align: center;
+                background-color: $youtube;
+                color: $textcolor;
+            
         }
-        h1 {
-            margin-right: 10px;
-            background-color: $youtube;
-            font-family: 'Roboto', sans-serif;
-        }
+    }
+    .link:hover {
+        width: 64vw;
     }
 }
 
 .aboutme {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 30px;
     h1 {
+        margin-top: 10px;
         text-align: center;
+        color: $textcolor;
     }
 
     p {
+        margin-top: 10px;
         text-align: center;
+        padding: 10px 20%;
+        color: $textcolordark;
+        font-size: 18px;
     }
 
     img {

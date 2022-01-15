@@ -8,12 +8,39 @@ let errorFile;
 const host = 'localhost';
 const port = 8000;
 
+const data = JSON.stringify({
+    todo: 'Buy the milk'
+  })
+const options = {
+    port: 81,
+    path: '/api',
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Content-Length': data.length
+}} 
+
+const req = http.request(options, res => {
+    console.log(`statusCode: ${res.statusCode}`)
+  
+    res.on('data', d => {
+      process.stdout.write(d)
+    })
+  })
+  
+  req.on('error', error => {
+    console.error(error)
+  })
+  
+  req.write(data)
+  req.end()
+
 const requestListener = async function (req, res) {
     res.setHeader("Content-Type", "text/html");
     switch (req.url) {
         case "/test":
-            res.writeHead(200);
-            res.end("test");
+              res.writeHead(200);
+              res.end("Test");
             break;
         case "/":
             res.writeHead(200);
@@ -30,7 +57,6 @@ const requestListener = async function (req, res) {
 };
 
 
-
 const startServer = async () => {
     const server = http.createServer(requestListener);
 
@@ -45,7 +71,7 @@ const startServer = async () => {
             process.exit(1);
         });
 
-    fs.readFile(__dirname + "/web/style.css")
+    fs.readFile(__dirname + "/web/styles/style.css")
         .then(contents => {
             styleFile = contents;
         })

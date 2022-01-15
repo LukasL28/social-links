@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,28 +9,57 @@
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
+
+    <script>
+fetch('/api', {method: 'GET'})
+  .then(response => response.json())
+  .then(data => {
+  console.log('Success:', data);
+})
+  .catch((error) => {
+  console.error('Error:', error);
+});
+
+    </script>
+
     <div class="aboutme-wrapper">
         <div class="aboutme">
             <img src="https://cdn.landderautisten.de/img/partybeer.gif" alt="">
             <h1>Name</h1>
-            <p>About me</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, magni. Quam alias illo aliquid
+                molestias nesciunt, soluta corporis? Eligendi quod facilis ducimus dolore sequi tempore ab sint
+                quisquam! Quaerat, commodi.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam pariatur voluptates distinctio rerum,
+                neque accusamus doloribus placeat qui nostrum fuga amet sunt illo, veritatis asperiores eligendi
+                voluptatibus tempore aliquid porro.
+            </p>
         </div>
     </div>
 
     <div class="links-wrapper">
         <div class="links">
-        
-            <h1>Links</h1>
-    <div class="link">
-        <img src="/web/styles/icons/youtube.png" alt="youtube">
-        <h1>YouTube</h1>
-    </div>
-        
 
-    </div>
+            <h1>Links</h1>
+            <div class="link">
+                <img src="/web/styles/icons/youtube.png" alt="youtube">
+                <h1>YouTube</h1>
+            </div>
+            <div class="link">
+                <img src="/web/styles/icons/youtube.png" alt="youtube">
+                <h1>YouTube</h1>
+            </div>
+            <div class="link">
+                <img src="/web/styles/icons/youtube.png" alt="youtube">
+                <h1>YouTube</h1>
+            </div>
+
+
+        </div>
     </div>
 
 
 </body>
+
 </html>
