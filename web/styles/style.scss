@@ -1,0 +1,81 @@
+$background : #323232;
+$border : #a3a3a3;
+
+$youtube : #711521;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    background-color: $background;
+}
+
+;
+
+html {
+    scroll-behavior: smooth;
+};
+
+.links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    h1 {
+        scale: 50px;
+    }
+
+    .link {
+        display: flex;
+        align-items: stretch;
+        border-style: none;
+        border-radius: 30px;
+        border-width: 2px;
+        border-color: $border;
+        padding: 10px;
+        background-color: $youtube;
+        img {
+            background-color: $youtube;
+            height: 40px;
+            margin-left: 5px;
+            margin-right: 10px;
+        }
+        h1 {
+            margin-right: 10px;
+            background-color: $youtube;
+            font-family: 'Roboto', sans-serif;
+        }
+    }
+}
+
+.aboutme {
+    h1 {
+        text-align: center;
+    }
+
+    p {
+        text-align: center;
+    }
+
+    img {
+        width: 200px;
+        height: auto;
+    }
+
+    ;
+}
+
+.aboutme-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+};
+
+.links-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+};
