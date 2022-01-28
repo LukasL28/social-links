@@ -7,6 +7,8 @@ const cors = require('cors');
 var app = express();
 var server = require('http').createServer(app);
 
+const database = ('./js/database.js');
+
 const port = 5000;
 const host_dir = __dirname+"/web"
 
@@ -19,3 +21,4 @@ app.use(express.static(host_dir));
 
 
 webserver(port, host_dir);
+
