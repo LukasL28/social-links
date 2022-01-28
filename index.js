@@ -7,24 +7,16 @@ const cors = require('cors');
 var app = express();
 var server = require('http').createServer(app);
 
-const webserver = function (port, hostdir) {
+const port = 4000;
+const host_dir = "/web"
+
+const webserver = function (port, host_dir) {
 
 server.listen(port, function () {
 console.log('Webserver läuft und hört auf Port %d', port);
 });
 
-app.use(express.static(hostdir));
+app.use(express.static(host_dir));
 
-fs.readdir(hostdir+'/images', (err, files) => {
-    files.forEach(dateiname => {
-        console.log('Server: Found--> '+dateiname)
-      app.get('/img/'+dateiname, cors(), function (req, res) {
-        res.header("Access-Control-Allow-Origin", "http://localhost:3000")
-        res.sendFile(hostdir+'/images/'+dateiname, cors())
-    })
-    });
-  });
 
 };
-
-module.exports = {webserver};
